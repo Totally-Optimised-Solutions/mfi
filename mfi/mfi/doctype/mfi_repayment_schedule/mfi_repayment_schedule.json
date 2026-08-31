@@ -1,0 +1,20 @@
+{
+ "doctype": "DocType",
+ "name": "MFI Repayment Schedule",
+ "module": "MFI",
+ "custom": 0,
+ "issingle": 0,
+ "istable": 1,
+ "editable_grid": 1,
+ "track_changes": 0,
+ "autoname": "hash",
+ "engine": "InnoDB",
+ "permissions": [],
+ "fields": [
+  {"fieldname": "due_date", "label": "Due Date", "fieldtype": "Date", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "principal", "label": "Principal", "fieldtype": "Currency", "reqd": 1},
+  {"fieldname": "interest", "label": "Interest", "fieldtype": "Currency", "reqd": 1},
+  {"fieldname": "total", "label": "Total EMI", "fieldtype": "Currency", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "paid", "label": "Paid", "fieldtype": "Check", "default": "0", "in_list_view": 1}
+ ]
+}

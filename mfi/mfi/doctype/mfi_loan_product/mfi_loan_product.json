@@ -1,0 +1,40 @@
+{
+ "doctype": "DocType",
+ "name": "MFI Loan Product",
+ "module": "MFI",
+ "custom": 0,
+ "issingle": 0,
+ "istable": 0,
+ "editable_grid": 0,
+ "track_changes": 1,
+ "autoname": "field:product_name",
+ "title_field": "product_name",
+ "search_fields": "product_name, product_code",
+ "sort_field": "creation",
+ "engine": "InnoDB",
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "MFI Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "MFI Branch Manager", "read": 1, "write": 1, "create": 1, "delete": 0},
+  {"role": "MFI Loan Officer", "read": 1, "write": 0, "create": 0, "delete": 0},
+  {"role": "MFI Auditor", "read": 1, "write": 0, "create": 0, "delete": 0}
+ ],
+ "fields": [
+  {"fieldname": "product_name", "label": "Product Name", "fieldtype": "Data", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "product_code", "label": "Product Code", "fieldtype": "Data", "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "interest_type", "label": "Interest Type", "fieldtype": "Select", "options": "Declining\nFlat", "default": "Declining", "reqd": 1},
+  {"fieldname": "rate_of_interest", "label": "Rate of Interest (%)", "fieldtype": "Percent", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "section_break_1", "fieldtype": "Section Break"},
+  {"fieldname": "min_amount", "label": "Min Amount", "fieldtype": "Currency", "reqd": 1},
+  {"fieldname": "max_amount", "label": "Max Amount", "fieldtype": "Currency", "reqd": 1},
+  {"fieldname": "column_break_2", "fieldtype": "Column Break"},
+  {"fieldname": "min_tenure", "label": "Min Tenure (weeks)", "fieldtype": "Int", "default": "26"},
+  {"fieldname": "max_tenure", "label": "Max Tenure (weeks)", "fieldtype": "Int", "default": "52"},
+  {"fieldname": "section_break_2", "fieldtype": "Section Break"},
+  {"fieldname": "repayment_frequency", "label": "Repayment Frequency", "fieldtype": "Select", "options": "Weekly\nBi-weekly\nMonthly", "default": "Weekly", "reqd": 1},
+  {"fieldname": "grace_period_days", "label": "Grace Period (days)", "fieldtype": "Int", "default": "0"},
+  {"fieldname": "dpd_threshold_npa", "label": "DPD Threshold for NPA", "fieldtype": "Int", "default": "90"},
+  {"fieldname": "is_active", "label": "Active", "fieldtype": "Check", "default": "1"}
+ ]
+}

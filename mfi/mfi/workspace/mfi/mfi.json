@@ -1,31 +1,40 @@
 {
- "creation": "2026-08-31 00:00:00.000000",
+ "app": "mfi",
+ "charts": [],
+ "content": "[{\"id\":\"mfiHeader1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>MFI — Microfinance</b></span>\",\"col\":12}},{\"id\":\"scCenter01\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MFI Center\",\"col\":3}},{\"id\":\"scGroup01\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MFI Group\",\"col\":3}},{\"id\":\"scMember01\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MFI Member\",\"col\":3}},{\"id\":\"scLoan01\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"MFI Loan\",\"col\":3}},{\"id\":\"mfiOps1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Operations</b></span>\",\"col\":12}},{\"id\":\"cardCenters\",\"type\":\"card\",\"data\":{\"card_name\":\"Centers & Groups\",\"col\":4}},{\"id\":\"cardMembers\",\"type\":\"card\",\"data\":{\"card_name\":\"Members\",\"col\":4}},{\"id\":\"cardLending\",\"type\":\"card\",\"data\":{\"card_name\":\"Lending\",\"col\":4}}]",
+ "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
- "name": "MFI",
- "label": "MFI",
- "title": "MFI",
- "icon": "organization",
- "indicator_color": "blue",
- "module": "MFI",
- "app": "mfi",
- "public": 1,
- "is_hidden": 0,
  "hide_custom": 0,
- "content": "[{\"id\":\"header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">MFI — Microfinance</span>\",\"col\":12}},{\"id\":\"spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"card_mfi\",\"type\":\"card\",\"data\":{\"card_name\":\"MFI\",\"col\":4}}]",
+ "icon": "organization",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "MFI",
  "links": [
-  {
-   "label": "MFI",
-   "type": "Card Break",
-   "icon": "organization",
-   "hidden": 0
-  }
+  {"hidden": 0, "is_query_report": 0, "label": "Centers & Groups", "link_count": 2, "link_type": "DocType", "onboard": 0, "type": "Card Break"},
+  {"hidden": 0, "is_query_report": 0, "label": "MFI Center", "link_count": 0, "link_to": "MFI Center", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "MFI Group", "link_count": 0, "link_to": "MFI Group", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Members", "link_count": 2, "link_type": "DocType", "onboard": 0, "type": "Card Break"},
+  {"hidden": 0, "is_query_report": 0, "label": "MFI Member", "link_count": 0, "link_to": "MFI Member", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "MFI KYC", "link_count": 0, "link_to": "MFI KYC", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "Lending", "link_count": 3, "link_type": "DocType", "onboard": 0, "type": "Card Break"},
+  {"hidden": 0, "is_query_report": 0, "label": "MFI Loan Product", "link_count": 0, "link_to": "MFI Loan Product", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "MFI Loan", "link_count": 0, "link_to": "MFI Loan", "link_type": "DocType", "onboard": 0, "type": "Link"},
+  {"hidden": 0, "is_query_report": 0, "label": "MFI Field Officer", "link_count": 0, "link_to": "MFI Field Officer", "link_type": "DocType", "onboard": 0, "type": "Link"}
  ],
- "shortcuts": [],
- "charts": [],
- "custom_blocks": [],
- "quick_lists": [],
+ "module": "MFI",
+ "name": "MFI",
  "number_cards": [],
+ "public": 1,
+ "quick_lists": [],
  "roles": [],
- "for_user": ""
+ "shortcuts": [
+  {"color": "Blue", "doc_view": "List", "label": "MFI Center", "link_to": "MFI Center", "type": "DocType"},
+  {"color": "Green", "doc_view": "List", "label": "MFI Group", "link_to": "MFI Group", "type": "DocType"},
+  {"color": "Orange", "doc_view": "List", "label": "MFI Member", "link_to": "MFI Member", "type": "DocType"},
+  {"color": "Grey", "doc_view": "List", "label": "MFI Loan", "link_to": "MFI Loan", "type": "DocType"}
+ ],
+ "title": "MFI",
+ "type": "Workspace"
 }
