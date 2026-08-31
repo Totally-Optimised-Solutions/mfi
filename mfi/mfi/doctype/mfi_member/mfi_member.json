@@ -182,10 +182,16 @@
    "description": "Area/Locality (optional)"
   },
   {
+   "fieldname": "geo_section",
+   "label": "Geo — Base Pin",
+   "fieldtype": "Section Break",
+   "collapsible": 0
+  },
+  {
    "fieldname": "location",
-   "label": "Map Location",
+   "label": "Base Location (Pin)",
    "fieldtype": "Geolocation",
-   "description": "Click map to drop pin — lat/long auto-filled below"
+   "description": "Map पर pin लगाओ — Latitude/Longitude नीचे auto"
   },
   {
    "fieldname": "latitude",

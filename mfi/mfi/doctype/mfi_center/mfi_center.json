@@ -166,10 +166,16 @@
    "description": "Area/Locality (optional)"
   },
   {
+   "fieldname": "geo_section",
+   "label": "Geo — Base Pin & Service Area",
+   "fieldtype": "Section Break",
+   "collapsible": 0
+  },
+  {
    "fieldname": "location",
-   "label": "Map Location",
+   "label": "Base Location (Pin)",
    "fieldtype": "Geolocation",
-   "description": "Click map to drop pin, use pencil to draw area polygon — lat/long auto-filled below"
+   "description": "Map पर click करके base pin लगाओ — Latitude/Longitude नीचे auto भर जाएगा"
   },
   {
    "fieldname": "latitude",
@@ -177,14 +183,15 @@
    "fieldtype": "Float",
    "precision": "8",
    "read_only": 1,
-   "description": "Auto from map pin"
+   "description": "Base pin से auto — map pin हटाने/बदलने पर update होगा"
   },
   {
    "fieldname": "longitude",
    "label": "Longitude",
    "fieldtype": "Float",
    "precision": "8",
-   "read_only": 1
+   "read_only": 1,
+   "description": "Base pin से auto — map pin हटाने/बदलने पर update होगा"
   },
   {
    "fieldname": "column_break_geo2",
@@ -192,9 +199,9 @@
   },
   {
    "fieldname": "service_area",
-   "label": "Service Area (Polygon)",
+   "label": "Service Area (Pencil Polygon)",
    "fieldtype": "Geolocation",
-   "description": "Use pencil tool on map to draw service area — polygon saved as GeoJSON"
+   "description": "Pencil tool से पूरे area को polygon बनाओ — सारे points connect करके exact boundary draw करो (edit/delete pencil toolbar से)"
   },
   {
    "fieldname": "status",
