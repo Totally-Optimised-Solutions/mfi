@@ -1,0 +1,55 @@
+{
+  "version": "v1",
+  "source_repo": "yashveeeeeeer/india-geodata",
+  "source_tag": "education/facilities",
+  "coverage": "education facilities (HOT OSM) \u2014 points national (19502) + polygons (70325)",
+  "built_at": "2026-08-31T09:23:26.933077Z",
+  "crs": "EPSG:4326",
+  "license": "ODbL (OpenStreetMap contributors)",
+  "simplify_tol": {
+    "polygons": 0.0001
+  },
+  "quantize_decimals": 5,
+  "files": [
+    {
+      "path": "points.min.geojson.gz",
+      "use": "education-points",
+      "features": 19502,
+      "size_gz": 599512,
+      "size_br": 416124,
+      "sha256": "9f3d10460527a65c030e5903916afd4181fbf2eac2936f5fac99f1f93ad4a6aa",
+      "sha256_br": "88a7bc10e107a7fe1cf568ea358110a7e0235c3d2261c4675c1f8bfb4336bc75",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip"
+    },
+    {
+      "path": "points.min.geojson.br",
+      "use": "education-points-brotli",
+      "features": 19502,
+      "size_br": 416124,
+      "sha256_br": "88a7bc10e107a7fe1cf568ea358110a7e0235c3d2261c4675c1f8bfb4336bc75",
+      "content_type": "application/geo+json",
+      "content_encoding": "br"
+    },
+    {
+      "path": "polygons.min.geojson.gz",
+      "use": "education-polygons",
+      "features": 70325,
+      "size_gz": 3468181,
+      "size_br": 2251235,
+      "sha256": "a84a1beafc9aba0ad3d1e251b17fa4e20e4b80057878fa32fd7cf126c584f9b7",
+      "sha256_br": "fbb5da0a24251184bf7a902c150d4ba318db1940180a9e75409ef558c77b5710",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip"
+    },
+    {
+      "path": "polygons.min.geojson.br",
+      "use": "education-polygons-brotli",
+      "features": 70325,
+      "size_br": 2251235,
+      "sha256_br": "fbb5da0a24251184bf7a902c150d4ba318db1940180a9e75409ef558c77b5710",
+      "content_type": "application/geo+json",
+      "content_encoding": "br"
+    }
+  ]
+}

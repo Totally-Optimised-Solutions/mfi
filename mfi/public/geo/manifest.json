@@ -708,6 +708,7 @@
     }
   ],
   "includes": [
-    "police/manifest.json"
+    "police/manifest.json",
+    "education/manifest.json"
   ]
 }
