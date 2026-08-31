@@ -1,5 +1,7 @@
-// MFI titles — remove "MFI " prefix from form & list headers.
-// Branch/Center/Group etc show "New Branch" not "New MFI Branch", list shows "Branch".
+// MFI titles — show "MFI / Branch / New" not "Branch / New Branch".
+// Branch/Center/Group etc live under MFI module. Breadcrumb should be
+// MFI -> Branch -> New (generic), not "New Branch" duplicated.
+// List title -> "Branch" stays.
 (function () {
 	var MAP = {
 		"MFI Branch": "Branch",
@@ -16,26 +18,31 @@
 		"MFI Repayment Schedule": "Repayment Schedule",
 	};
 
-	function clean(dt) {
-		return MAP[dt] || dt.replace(/^MFI\s+/, "");
-	}
-
-	// Form: "New MFI Branch" -> "New Branch"
 	Object.keys(MAP).forEach(function (dt) {
 		var label = MAP[dt];
+
+		// Form: frappe.breadcrumbs.add(module, doctype) uses doctype string.
+		// We intercept breadcrumb add to map "MFI Branch" -> "Branch",
+		// then set page title to just "New" for new docs (breadcrumb already shows Branch).
 		frappe.ui.form.on(dt, {
 			refresh: function (frm) {
-				if (frm.is_new()) {
-					setTimeout(function () {
-						if (frm.page && frm.page.set_title) {
-							frm.page.set_title(__("New {0}", [label]));
+				if (!frm.is_new()) return;
+				setTimeout(function () {
+					// Fix title: was "New Branch" -> make it just "New"
+					// with breadcrumb MFI / Branch / New
+					if (frm.page && frm.page.set_title) {
+						frm.page.set_title(__("New"));
+					}
+					// Fallback DOM — avoid double "New Branch" if another hook already set it
+					var h = document.querySelector(".page-title .title-text");
+					if (h) {
+						var t = h.textContent.trim();
+						// "New Branch" or "New MFI Branch" -> "New"
+						if (t === "New " + label || t.indexOf("New MFI") === 0) {
+							h.textContent = "New";
 						}
-						var h = document.querySelector(".page-title .title-text");
-						if (h && h.textContent.indexOf("MFI ") !== -1) {
-							h.textContent = h.textContent.replace(/MFI\s+/g, "");
-						}
-					}, 0);
-				}
+					}
+				}, 0);
 			},
 		});
 
@@ -50,32 +57,30 @@
 		};
 	});
 
-	// Fallback for any MFI route — clean leftover "MFI " in page title
+	// Breadcrumb cleaner: patch frappe.breadcrumbs.add to strip "MFI " from doctype
+	var _add = frappe.breadcrumbs && frappe.breadcrumbs.add;
+	if (_add) {
+		frappe.breadcrumbs.add = function (module, doctype) {
+			if (doctype && MAP[doctype]) doctype = MAP[doctype];
+			// frappe.breadcrumbs.add can be called with (module, doctype) or (label)
+			if (module && MAP[module]) module = MAP[module];
+			// Normalize: module "MFI" stays, doctype "MFI Branch" -> "Branch"
+			return _add.call(this, module, doctype);
+		};
+	}
+
+	// Also clean any already-rendered breadcrumb "MFI Branch" -> "Branch"
 	if (frappe.router && frappe.router.on) {
 		frappe.router.on("change", function () {
 			setTimeout(function () {
-				var el = document.querySelector(".page-title .title-text");
-				if (!el) return;
-				var t = el.textContent.trim();
-				if (t.indexOf("MFI ") !== -1) {
-					// "New MFI Branch" -> "New Branch", "MFI Branch List" -> "Branch List"
-					el.textContent = t.replace(/MFI\s+/g, "");
-				}
-			}, 120);
+				document.querySelectorAll(".breadcrumb-item, .breadcrumb a, .page-title .title-text").forEach(function (el) {
+					var t = el.textContent.trim();
+					Object.keys(MAP).forEach(function (k) {
+						if (t === k) el.textContent = MAP[k];
+						if (t === "New " + k) el.textContent = "New";
+					});
+				});
+			}, 150);
 		});
-	}
-
-	// Also patch __ for these keys as last resort if translation misses
-	var _orig__ = window.__;
-	if (_orig__) {
-		window.__ = function (txt, replace, context) {
-			var out = _orig__(txt, replace, context);
-			// only clean known MFI doctype strings, not arbitrary text
-			if (MAP[txt]) return MAP[txt];
-			if (txt && txt.indexOf("MFI ") === 0 && MAP[txt]) return MAP[txt];
-			return out;
-		};
-		// keep format helper
-		window.__._orig = _orig__;
 	}
 })();
