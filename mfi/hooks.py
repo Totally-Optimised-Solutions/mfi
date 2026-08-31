@@ -27,6 +27,10 @@ add_to_apps_screen = [
 	}
 ]
 
-app_include_js = ["/assets/mfi/js/mfi_india_address.js", "/assets/mfi/js/mfi_geo.js"]
+app_include_js = [
+	"/assets/mfi/js/mfi_india_address.js",
+	"/assets/mfi/js/mfi_geo.js",
+	"/assets/mfi/js/mfi_titles.js",
+]
 
 after_migrate = ["mfi.patches.v0_1.create_mfi_roles.execute"]
