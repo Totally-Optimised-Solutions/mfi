@@ -706,5 +706,8 @@
       "content_type": "application/geo+json",
       "content_encoding": "br"
     }
+  ],
+  "includes": [
+    "police/manifest.json"
   ]
 }

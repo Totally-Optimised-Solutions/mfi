@@ -1,0 +1,384 @@
+{
+  "version": "v1",
+  "source_repo": "yashveeeeeeer/india-geodata",
+  "source_tag": "police/jurisdictions",
+  "coverage": "police station jurisdictions (polygon, 8 states/regions, 12 files, ~7732 boundaries) + stations points (national, 16459)",
+  "built_at": "2026-08-31T09:18:57.303322Z",
+  "crs": "EPSG:4326",
+  "license": "CC0-1.0 / stations unspecified per source",
+  "simplify_tol": 0.0003,
+  "quantize_decimals": 5,
+  "files": [
+    {
+      "path": "ap-policedistrict.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 1088,
+      "size_gz": 860377,
+      "size_br": 517761,
+      "sha256": "d91d1a43ee07404f15eb7271b24cd61b387311565aac621d251ce06365f92c84",
+      "sha256_br": "89ac817dd044a0efdbd34312fc9a23b79dd3ab0d155ce3276cd87e49f7888722",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "APSAC_Police_station_boundaries.parquet",
+      "props": [
+        "police_station_name",
+        "polce_station_code",
+        "d_name",
+        "d_code",
+        "div_name",
+        "subdiv_name",
+        "circle_name",
+        "circle_code"
+      ]
+    },
+    {
+      "path": "ap-policedistrict.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 1088,
+      "size_br": 517761,
+      "sha256_br": "89ac817dd044a0efdbd34312fc9a23b79dd3ab0d155ce3276cd87e49f7888722",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "APSAC_Police_station_boundaries.parquet"
+    },
+    {
+      "path": "bihar.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 896,
+      "size_gz": 878301,
+      "size_br": 530936,
+      "sha256": "13a11ce3df30fc8ae518dd2766e1beea8a82a7cbb8a27fbbb97f6c481134a8a4",
+      "sha256_br": "685f01415cf3343e540e5d48c73312ee5830d936dce6683e82370cbd1ffc9c53",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "Bhugoal_BH_Police_Thana_Boundaries.parquet",
+      "props": [
+        "PS_NAME",
+        "DIST_NAME",
+        "ST_NAME",
+        "ST_CODE",
+        "DIST_CODE"
+      ]
+    },
+    {
+      "path": "bihar.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 896,
+      "size_br": 530936,
+      "sha256_br": "685f01415cf3343e540e5d48c73312ee5830d936dce6683e82370cbd1ffc9c53",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "Bhugoal_BH_Police_Thana_Boundaries.parquet"
+    },
+    {
+      "path": "delhi.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 180,
+      "size_gz": 28466,
+      "size_br": 20618,
+      "sha256": "1bbb12c5d0e4bbfa18761db1c80977540608f704da995620ee3aac83a3115cd1",
+      "sha256_br": "bd65a5a4e4bf72de689b50875725b8e23056403db8d9584964575f9b9e3a59b2",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "GSDL_DL_Police_Station_Boundaries.parquet",
+      "props": [
+        "POL_STN_NM",
+        "DIST_NM",
+        "SUB_DIVISI",
+        "RANGE"
+      ]
+    },
+    {
+      "path": "delhi.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 180,
+      "size_br": 20618,
+      "sha256_br": "bd65a5a4e4bf72de689b50875725b8e23056403db8d9584964575f9b9e3a59b2",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "GSDL_DL_Police_Station_Boundaries.parquet"
+    },
+    {
+      "path": "karnataka.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 830,
+      "size_gz": 946823,
+      "size_br": 560045,
+      "sha256": "4824428227834cfd9c8e3ffb24b5c83584c5d239e9dcf26f3ddd63d29b427f55",
+      "sha256_br": "ff147a4c3b8849afbcf2db27487c0991860f9981da8208d7da0afa00f3461223",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "KGISMAPS_KN_Police_Station_Boundaries.parquet",
+      "props": [
+        "PS_BOUNDName",
+        "PS_BOUNDCode",
+        "KGISPS_BOUNDID"
+      ]
+    },
+    {
+      "path": "karnataka.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 830,
+      "size_br": 560045,
+      "sha256_br": "ff147a4c3b8849afbcf2db27487c0991860f9981da8208d7da0afa00f3461223",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "KGISMAPS_KN_Police_Station_Boundaries.parquet"
+    },
+    {
+      "path": "karnataka-railway.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 24,
+      "size_gz": 43944,
+      "size_br": 27041,
+      "sha256": "880810a94fe943fb2f7d8ca9dbd52fd7d032fafe803d7ca01752420ee74e97a3",
+      "sha256_br": "a28b52bfa0ab47550ff3b4030c35fd34df5234b5ba7978fecc87c9681c1b6a5f",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "KGISMAPS_KN_Railway_Police_Station_Boundaries.parquet",
+      "props": [
+        "RAIL_PS_BOUNDNAME",
+        "RAIL_PS_BOUNDCODE",
+        "KGISRAIL_PS_BOUNDID"
+      ]
+    },
+    {
+      "path": "karnataka-railway.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 24,
+      "size_br": 27041,
+      "sha256_br": "a28b52bfa0ab47550ff3b4030c35fd34df5234b5ba7978fecc87c9681c1b6a5f",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "KGISMAPS_KN_Railway_Police_Station_Boundaries.parquet"
+    },
+    {
+      "path": "karnataka-traffic.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 47,
+      "size_gz": 17904,
+      "size_br": 12204,
+      "sha256": "e3a49005bafe4785d31eb488d2d5cce3abc6153acb318ca5ae7d0cde9d289181",
+      "sha256_br": "641b7d4c365cb2687ff095e34a54b083f4c6aaabffadf7d6ffbb1c83c7acfb46",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "KGISMAPS_KN_Traffic_Police_Station_Boundaries.parquet",
+      "props": [
+        "PS_BOUNDName",
+        "PS_BOUNDCode",
+        "Traffic_PS"
+      ]
+    },
+    {
+      "path": "karnataka-traffic.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 47,
+      "size_br": 12204,
+      "sha256_br": "641b7d4c365cb2687ff095e34a54b083f4c6aaabffadf7d6ffbb1c83c7acfb46",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "KGISMAPS_KN_Traffic_Police_Station_Boundaries.parquet"
+    },
+    {
+      "path": "marine.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 580,
+      "size_gz": 143681,
+      "size_br": 92071,
+      "sha256": "59a1530076cf5ba50baaadb48596d82f01cb89f6a994577cb333443f32927d7d",
+      "sha256_br": "1e959d425acb8ab948694e5c612d13dac83bcc26a358967f72d11c18bf3c70b0",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "NCOG_Marine_Police_Boundaries.parquet",
+      "props": [
+        "name_mps",
+        "district",
+        "taluka",
+        "village",
+        "id"
+      ]
+    },
+    {
+      "path": "marine.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 580,
+      "size_br": 92071,
+      "sha256_br": "1e959d425acb8ab948694e5c612d13dac83bcc26a358967f72d11c18bf3c70b0",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "NCOG_Marine_Police_Boundaries.parquet"
+    },
+    {
+      "path": "rajasthan-grp.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 10,
+      "size_gz": 621,
+      "size_br": 494,
+      "sha256": "858139efb1b02029473def896f106a8a9941cdb05a540ad0dd00d43ece934589",
+      "sha256_br": "abf509d6fd1d9c6b41939b26bba395a78495ec90b1dc725b2737025763dab145",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "Rajdharaa_RJ_GRP_Thana_Boundary.parquet",
+      "props": [
+        "GRP_DISTRICT_NAME",
+        "GRP_DISTRICT_CODE",
+        "GISCODE"
+      ]
+    },
+    {
+      "path": "rajasthan-grp.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 10,
+      "size_br": 494,
+      "sha256_br": "abf509d6fd1d9c6b41939b26bba395a78495ec90b1dc725b2737025763dab145",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "Rajdharaa_RJ_GRP_Thana_Boundary.parquet"
+    },
+    {
+      "path": "rajasthan.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 883,
+      "size_gz": 955750,
+      "size_br": 578853,
+      "sha256": "d624509b24b449fe3047447fd5d32beb1a334642f287025f87f87f92fe65986d",
+      "sha256_br": "04faf104604eaf980287f2886bccbae01c868f336f956d70a7f4d50f0c9b6c73",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "Rajdharaa_RJ_Police_Thana_Boundary.parquet",
+      "props": [
+        "NAME",
+        "CITY",
+        "GISCODE"
+      ]
+    },
+    {
+      "path": "rajasthan.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 883,
+      "size_br": 578853,
+      "sha256_br": "04faf104604eaf980287f2886bccbae01c868f336f956d70a7f4d50f0c9b6c73",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "Rajdharaa_RJ_Police_Thana_Boundary.parquet"
+    },
+    {
+      "path": "tamil-nadu.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 1333,
+      "size_gz": 1165167,
+      "size_br": 701795,
+      "sha256": "a1fd98c6f64cb5503a36373e2b131f79bec72b5a09ffe123529e0b56232192e7",
+      "sha256_br": "dd95487a4f30df1d34f9373869e6f627732247aa4d3382cbad100a9bbee64661",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "TNGIS_TN_Police_Station_Boundaries.parquet",
+      "props": [
+        "police_station_name",
+        "police_station_code",
+        "district_name",
+        "taluk_name"
+      ]
+    },
+    {
+      "path": "tamil-nadu.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 1333,
+      "size_br": 701795,
+      "sha256_br": "dd95487a4f30df1d34f9373869e6f627732247aa4d3382cbad100a9bbee64661",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "TNGIS_TN_Police_Station_Boundaries.parquet"
+    },
+    {
+      "path": "tamil-nadu-traffic.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 1149,
+      "size_gz": 1120560,
+      "size_br": 673689,
+      "sha256": "7f3825d74b69197786aaba3b4599e2fad2166eb1d91c684f73b82ca28a218a2c",
+      "sha256_br": "18bd2a58b4e4d551dc9ef6befa811e7c888a3ed5b51b77714c04efe32d7696bc",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "TNGIS_TN_Traffic_Police_Station_Boundaries.parquet",
+      "props": [
+        "police_station_code",
+        "district_name",
+        "taluk_name"
+      ]
+    },
+    {
+      "path": "tamil-nadu-traffic.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 1149,
+      "size_br": 673689,
+      "sha256_br": "18bd2a58b4e4d551dc9ef6befa811e7c888a3ed5b51b77714c04efe32d7696bc",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "TNGIS_TN_Traffic_Police_Station_Boundaries.parquet"
+    },
+    {
+      "path": "telangana.min.geojson.gz",
+      "use": "police-jurisdiction",
+      "features": 712,
+      "size_gz": 606898,
+      "size_br": 367402,
+      "sha256": "84852b5d4242ec223826ff8e8f00791ae7d34b365d7115cc51162f5c5ee950a7",
+      "sha256_br": "f69f5094697bbe9f05f698511add588970d298ec1825d3c8b5c1eb28be7d6db2",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "TRACGIS_TG_Police_Station_Boundaries.parquet",
+      "props": [
+        "PS_Name",
+        "PS_BND",
+        "TS_PS_Mand",
+        "TS_PS_Dist",
+        "Circle",
+        "SDPO",
+        "Zone",
+        "Division"
+      ]
+    },
+    {
+      "path": "telangana.min.geojson.br",
+      "use": "police-jurisdiction-brotli",
+      "features": 712,
+      "size_br": 367402,
+      "sha256_br": "f69f5094697bbe9f05f698511add588970d298ec1825d3c8b5c1eb28be7d6db2",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "TRACGIS_TG_Police_Station_Boundaries.parquet"
+    },
+    {
+      "path": "stations.min.geojson.gz",
+      "use": "police-stations",
+      "features": 16459,
+      "size_gz": 509263,
+      "size_br": 370723,
+      "sha256": "7045592699d9c7eefe13371c495e23eaa5e190b94889484a0e74f710dc154b6d",
+      "sha256_br": "41c424114c562bf336c7076fe66018cbc8e14f0b5d5c84e40541384ede6b6118",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "INDIA_POLICE_STATIONS.geojson",
+      "props": [
+        "state",
+        "state_cd",
+        "district",
+        "ps",
+        "ps_cd",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "path": "stations.min.geojson.br",
+      "use": "police-stations-brotli",
+      "features": 16459,
+      "size_br": 370723,
+      "sha256_br": "41c424114c562bf336c7076fe66018cbc8e14f0b5d5c84e40541384ede6b6118",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "INDIA_POLICE_STATIONS.geojson"
+    }
+  ]
+}
