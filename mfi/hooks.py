@@ -5,6 +5,8 @@ app_description = "Microfinance — JLG/SHG, center meetings, KYC, lending lifec
 app_email = "hello@totallyoptimised.com"
 app_license = "mit"
 
+required_apps = ["india_geo"]
+
 fixtures = [
 	{
 		"dt": "Role",

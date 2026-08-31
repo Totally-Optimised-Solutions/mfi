@@ -80,15 +80,18 @@
   {
    "fieldname": "region",
    "label": "Region",
-   "fieldtype": "Select",
-   "options": "\nNorth\nSouth\nEast\nWest\nCentral\nNorth-East",
-   "description": "Broad belt — कई states मिलके एक Region (reporting/cluster के लिए)"
+   "fieldtype": "Link",
+   "options": "India Geo Region",
+   "description": "Masters: India Geo → Region — नया जोड़ना हो तो Masters में Add करो",
+   "in_list_view": 1,
+   "in_standard_filter": 1
   },
   {
    "fieldname": "zone",
    "label": "Zone",
-   "fieldtype": "Data",
-   "description": "Region के अंदर operational zone — e.g. Maharashtra Zone, Bihar-UP Zone (4–6 branches per zone)"
+   "fieldtype": "Link",
+   "description": "Masters: India Geo → Zone — Region चुनने पर filter होगा",
+   "options": "India Geo Zone"
   },
   {
    "fieldname": "section_break_1",
@@ -144,19 +147,21 @@
   {
    "fieldname": "state",
    "label": "State",
-   "fieldtype": "Select",
-   "options": "Andhra Pradesh\nArunachal Pradesh\nAssam\nBihar\nChhattisgarh\nGoa\nGujarat\nHaryana\nHimachal Pradesh\nJharkhand\nKarnataka\nKerala\nMadhya Pradesh\nMaharashtra\nManipur\nMeghalaya\nMizoram\nNagaland\nOdisha\nPunjab\nRajasthan\nSikkim\nTamil Nadu\nTelangana\nTripura\nUttar Pradesh\nUttarakhand\nWest Bengal\nAndaman and Nicobar Islands\nChandigarh\nDadra and Nagar Haveli and Daman and Diu\nDelhi\nJammu and Kashmir\nLadakh\nLakshadweep\nPuducherry",
+   "fieldtype": "Link",
+   "options": "India Geo State",
    "reqd": 1,
    "in_list_view": 1,
-   "in_standard_filter": 1
+   "in_standard_filter": 1,
+   "description": "Masters: India Geo → State — नई स्टेट Masters में जोड़ो"
   },
   {
    "fieldname": "district",
    "label": "District",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "description": "Select from list or type manually if not found"
+   "description": "Masters: India Geo → District — State चुनने पर filter होगा",
+   "options": "India Geo District"
   },
   {
    "fieldname": "column_break_addr1",
@@ -165,9 +170,10 @@
   {
    "fieldname": "city",
    "label": "City",
-   "fieldtype": "Autocomplete",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "description": "Select from district list or type manually"
+   "description": "Masters: India Geo → City — District/State से filter",
+   "options": "India Geo City"
   },
   {
    "fieldname": "pincode",
