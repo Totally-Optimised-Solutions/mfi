@@ -64,13 +64,13 @@
 	}
 	function clearStaleZone(frm) {
 		if (!frm.doc.region || !frm.doc.zone) return;
-		frappe.db.get_value("India Geo Zone", frm.doc.zone, "region").then(function (r) {
+		frappe.db.get_value("Zone", frm.doc.zone, "region").then(function (r) {
 			if (r && r.message && r.message.region !== frm.doc.region) frm.set_value("zone", "");
 		});
 	}
 	function clearStaleDistrict(frm) {
 		if (!frm.doc.state || !frm.doc.district) return;
-		frappe.db.get_value("India Geo District", frm.doc.district, "state").then(function (r) {
+		frappe.db.get_value("District", frm.doc.district, "state").then(function (r) {
 			if (r && r.message && r.message.state !== frm.doc.state) {
 				frm.set_value("district", "");
 				frm.set_value("city", "");
@@ -79,7 +79,7 @@
 	}
 	function clearStaleCity(frm) {
 		if (!frm.doc.district || !frm.doc.city) return;
-		frappe.db.get_value("India Geo City", frm.doc.city, "district").then(function (r) {
+		frappe.db.get_value("City", frm.doc.city, "district").then(function (r) {
 			if (r && r.message && r.message.district !== frm.doc.district) frm.set_value("city", "");
 		});
 	}

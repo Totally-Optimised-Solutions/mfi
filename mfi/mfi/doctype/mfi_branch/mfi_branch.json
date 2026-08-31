@@ -1,97 +1,82 @@
 {
- "doctype": "DocType",
- "name": "MFI Branch",
- "module": "MFI",
- "custom": 0,
- "issingle": 0,
- "istable": 0,
- "editable_grid": 0,
- "track_changes": 1,
+ "actions": [],
  "autoname": "field:branch_name",
- "title_field": "branch_name",
- "search_fields": "branch_name, branch_code, city, district, state, pincode",
- "sort_field": "creation",
+ "creation": "2026-08-31 15:51:46.269030",
+ "doctype": "DocType",
  "engine": "InnoDB",
- "permissions": [
-  {
-   "role": "System Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1
-  },
-  {
-   "role": "MFI Admin",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1
-  },
-  {
-   "role": "MFI Branch Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 0
-  },
-  {
-   "role": "MFI Loan Officer",
-   "read": 1,
-   "write": 0,
-   "create": 0,
-   "delete": 0
-  },
-  {
-   "role": "MFI Auditor",
-   "read": 1,
-   "write": 0,
-   "create": 0,
-   "delete": 0
-  }
+ "field_order": [
+  "tab_details",
+  "branch_code",
+  "branch_name",
+  "column_break_1",
+  "region",
+  "zone",
+  "section_break_1",
+  "branch_head",
+  "phone",
+  "column_break_2",
+  "status",
+  "tab_address",
+  "address_section",
+  "country",
+  "state",
+  "district",
+  "column_break_addr1",
+  "city",
+  "pincode",
+  "address_line1",
+  "address_line2",
+  "tab_location",
+  "geo_section",
+  "location",
+  "latitude",
+  "longitude",
+  "column_break_geo2",
+  "service_area"
  ],
  "fields": [
   {
    "fieldname": "tab_details",
-   "label": "Details",
-   "fieldtype": "Tab Break"
+   "fieldtype": "Tab Break",
+   "label": "Details"
   },
   {
+   "description": "e.g. BR-MH-PUNE-001 — unique code, पहले यही भरें",
    "fieldname": "branch_code",
-   "label": "Branch Code",
    "fieldtype": "Data",
-   "reqd": 1,
-   "unique": 1,
    "in_list_view": 1,
-   "description": "e.g. BR-MH-PUNE-001 — unique code, पहले यही भरें"
+   "label": "Branch Code",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "branch_name",
-   "label": "Branch Name",
    "fieldtype": "Data",
-   "reqd": 1,
-   "unique": 1,
    "in_list_view": 1,
-   "in_standard_filter": 1
+   "in_standard_filter": 1,
+   "label": "Branch Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "column_break_1",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "region",
-   "label": "Region",
-   "fieldtype": "Link",
-   "options": "India Geo Region",
    "description": "Masters: India Geo → Region — नया जोड़ना हो तो Masters में Add करो",
+   "fieldname": "region",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "in_standard_filter": 1
+   "in_standard_filter": 1,
+   "label": "Region",
+   "options": "Region"
   },
   {
-   "fieldname": "zone",
-   "label": "Zone",
-   "fieldtype": "Link",
    "description": "Masters: India Geo → Zone — Region चुनने पर filter होगा",
-   "options": "India Geo Zone"
+   "fieldname": "zone",
+   "fieldtype": "Link",
+   "label": "Zone",
+   "options": "Zone"
   },
   {
    "fieldname": "section_break_1",
@@ -99,14 +84,14 @@
   },
   {
    "fieldname": "branch_head",
-   "label": "Branch Head",
    "fieldtype": "Link",
+   "label": "Branch Head",
    "options": "User"
   },
   {
    "fieldname": "phone",
-   "label": "Phone",
    "fieldtype": "Data",
+   "label": "Phone",
    "options": "Phone"
   },
   {
@@ -114,129 +99,170 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "status",
-   "label": "Status",
-   "fieldtype": "Select",
-   "options": "Active\nInactive\nClosed",
    "default": "Active",
-   "reqd": 1,
-   "in_list_view": 1
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nClosed",
+   "reqd": 1
   },
   {
    "fieldname": "tab_address",
-   "label": "Address",
-   "fieldtype": "Tab Break"
+   "fieldtype": "Tab Break",
+   "label": "Address"
   },
   {
    "fieldname": "address_section",
-   "label": "Address",
    "fieldtype": "Section Break",
-   "collapsible": 0
+   "label": "Address"
   },
   {
-   "fieldname": "country",
-   "label": "Country",
-   "fieldtype": "Select",
    "default": "India",
-   "reqd": 1,
+   "fieldname": "country",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "in_standard_filter": 1,
+   "label": "Country",
    "options": "India",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
+   "description": "Masters: India Geo → State — नई स्टेट Masters में जोड़ो",
    "fieldname": "state",
-   "label": "State",
    "fieldtype": "Link",
-   "options": "India Geo State",
-   "reqd": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "description": "Masters: India Geo → State — नई स्टेट Masters में जोड़ो"
+   "label": "State",
+   "options": "State",
+   "reqd": 1
   },
   {
+   "description": "Masters: India Geo → District — State चुनने पर filter होगा",
    "fieldname": "district",
-   "label": "District",
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "description": "Masters: India Geo → District — State चुनने पर filter होगा",
-   "options": "India Geo District"
+   "label": "District",
+   "options": "District"
   },
   {
    "fieldname": "column_break_addr1",
    "fieldtype": "Column Break"
   },
   {
+   "description": "Masters: India Geo → City — District/State से filter",
    "fieldname": "city",
-   "label": "City",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "description": "Masters: India Geo → City — District/State से filter",
-   "options": "India Geo City"
+   "label": "City",
+   "options": "City"
   },
   {
+   "description": "6-digit pincode",
    "fieldname": "pincode",
+   "fieldtype": "Data",
    "label": "Pincode",
-   "fieldtype": "Data",
-   "length": 6,
-   "description": "6-digit pincode"
+   "length": 6
   },
   {
+   "description": "House/Street/Landmark",
    "fieldname": "address_line1",
-   "label": "Address Line 1",
    "fieldtype": "Data",
-   "reqd": 1,
-   "description": "House/Street/Landmark"
+   "label": "Address Line 1",
+   "reqd": 1
   },
   {
+   "description": "Area/Locality (optional)",
    "fieldname": "address_line2",
-   "label": "Address Line 2",
    "fieldtype": "Data",
-   "description": "Area/Locality (optional)"
+   "label": "Address Line 2"
   },
   {
    "fieldname": "tab_location",
-   "label": "Location",
-   "fieldtype": "Tab Break"
+   "fieldtype": "Tab Break",
+   "label": "Location"
   },
   {
    "fieldname": "geo_section",
-   "label": "Geo — Base Pin & Service Area",
    "fieldtype": "Section Break",
-   "collapsible": 0
+   "label": "Geo — Base Pin & Service Area"
   },
   {
+   "description": "Map पर click करके base pin लगाओ — Latitude/Longitude नीचे auto भर जाएगा",
    "fieldname": "location",
-   "label": "Base Location (Pin)",
    "fieldtype": "Geolocation",
-   "description": "Map पर click करके base pin लगाओ — Latitude/Longitude नीचे auto भर जाएगा"
+   "label": "Base Location (Pin)"
   },
   {
+   "description": "Base pin से auto — map pin हटाने/बदलने पर update होगा",
    "fieldname": "latitude",
-   "label": "Latitude",
    "fieldtype": "Float",
+   "label": "Latitude",
    "precision": "8",
-   "read_only": 1,
-   "description": "Base pin से auto — map pin हटाने/बदलने पर update होगा"
+   "read_only": 1
   },
   {
+   "description": "Base pin से auto — map pin हटाने/बदलने पर update होगा",
    "fieldname": "longitude",
-   "label": "Longitude",
    "fieldtype": "Float",
+   "label": "Longitude",
    "precision": "8",
-   "read_only": 1,
-   "description": "Base pin से auto — map pin हटाने/बदलने पर update होगा"
+   "read_only": 1
   },
   {
    "fieldname": "column_break_geo2",
    "fieldtype": "Column Break"
   },
   {
+   "description": "Pencil tool से पूरे area को polygon बनाओ — सारे points connect करके exact boundary draw करो (edit/delete pencil toolbar से)",
    "fieldname": "service_area",
-   "label": "Service Area (Pencil Polygon)",
    "fieldtype": "Geolocation",
-   "description": "Pencil tool से पूरे area को polygon बनाओ — सारे points connect करके exact boundary draw करो (edit/delete pencil toolbar से)"
+   "label": "Service Area (Pencil Polygon)"
   }
- ]
+ ],
+ "links": [],
+ "modified": "2026-08-31 16:04:09.781187",
+ "modified_by": "Administrator",
+ "module": "MFI",
+ "name": "MFI Branch",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "MFI Admin",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "MFI Branch Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "MFI Loan Officer"
+  },
+  {
+   "read": 1,
+   "role": "MFI Auditor"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "branch_name, branch_code, city, district, state, pincode",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "branch_name",
+ "track_changes": 1
 }
