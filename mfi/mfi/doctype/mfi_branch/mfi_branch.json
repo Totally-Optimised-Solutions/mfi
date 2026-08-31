@@ -169,9 +169,34 @@
   },
   {
    "fieldname": "location",
-   "label": "Geolocation",
+   "label": "Map Location",
    "fieldtype": "Geolocation",
-   "description": "Optional map pin"
+   "description": "Click map to drop pin, use pencil to draw area polygon — lat/long auto-filled below"
+  },
+  {
+   "fieldname": "latitude",
+   "label": "Latitude",
+   "fieldtype": "Float",
+   "precision": "8",
+   "read_only": 1,
+   "description": "Auto from map pin"
+  },
+  {
+   "fieldname": "longitude",
+   "label": "Longitude",
+   "fieldtype": "Float",
+   "precision": "8",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_geo2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_area",
+   "label": "Service Area (Polygon)",
+   "fieldtype": "Geolocation",
+   "description": "Use pencil tool on map to draw service area — polygon saved as GeoJSON"
   },
   {
    "fieldname": "status",

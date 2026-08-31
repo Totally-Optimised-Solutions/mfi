@@ -181,9 +181,28 @@
   },
   {
    "fieldname": "location",
-   "label": "Geolocation",
+   "label": "Map Location",
    "fieldtype": "Geolocation",
-   "description": "Optional map pin"
+   "description": "Click map to drop pin — lat/long auto-filled below"
+  },
+  {
+   "fieldname": "latitude",
+   "label": "Latitude",
+   "fieldtype": "Float",
+   "precision": "8",
+   "read_only": 1,
+   "description": "Auto from map pin"
+  },
+  {
+   "fieldname": "longitude",
+   "label": "Longitude",
+   "fieldtype": "Float",
+   "precision": "8",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_geo2",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "status",
