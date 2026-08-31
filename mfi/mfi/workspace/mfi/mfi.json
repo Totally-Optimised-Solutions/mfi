@@ -1,0 +1,31 @@
+{
+ "creation": "2026-08-31 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "name": "MFI",
+ "label": "MFI",
+ "title": "MFI",
+ "icon": "organization",
+ "indicator_color": "blue",
+ "module": "MFI",
+ "app": "mfi",
+ "public": 1,
+ "is_hidden": 0,
+ "hide_custom": 0,
+ "content": "[{\"id\":\"header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">MFI — Microfinance</span>\",\"col\":12}},{\"id\":\"spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"card_mfi\",\"type\":\"card\",\"data\":{\"card_name\":\"MFI\",\"col\":4}}]",
+ "links": [
+  {
+   "label": "MFI",
+   "type": "Card Break",
+   "icon": "organization",
+   "hidden": 0
+  }
+ ],
+ "shortcuts": [],
+ "charts": [],
+ "custom_blocks": [],
+ "quick_lists": [],
+ "number_cards": [],
+ "roles": [],
+ "for_user": ""
+}
