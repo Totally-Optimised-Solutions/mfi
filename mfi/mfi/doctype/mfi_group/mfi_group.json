@@ -9,25 +9,173 @@
  "track_changes": 1,
  "autoname": "MFI-GRP-.####",
  "title_field": "group_name",
- "search_fields": "group_name, center",
+ "search_fields": "group_name, center, city, district, state",
  "sort_field": "creation",
  "engine": "InnoDB",
  "permissions": [
-  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
-  {"role": "MFI Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
-  {"role": "MFI Branch Manager", "read": 1, "write": 1, "create": 1, "delete": 0},
-  {"role": "MFI Loan Officer", "read": 1, "write": 1, "create": 1, "delete": 0},
-  {"role": "MFI Auditor", "read": 1, "write": 0, "create": 0, "delete": 0}
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "MFI Admin",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "MFI Branch Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0
+  },
+  {
+   "role": "MFI Loan Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0
+  },
+  {
+   "role": "MFI Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0
+  }
  ],
  "fields": [
-  {"fieldname": "group_name", "label": "Group Name", "fieldtype": "Data", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
-  {"fieldname": "center", "label": "Center", "fieldtype": "Link", "options": "MFI Center", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
-  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
-  {"fieldname": "formation_date", "label": "Formation Date", "fieldtype": "Date", "default": "Today"},
-  {"fieldname": "field_officer", "label": "Field Officer", "fieldtype": "Link", "options": "MFI Field Officer"},
-  {"fieldname": "section_break_1", "fieldtype": "Section Break"},
-  {"fieldname": "members", "label": "Members", "fieldtype": "Table", "options": "MFI Group Member", "reqd": 1},
-  {"fieldname": "section_break_2", "fieldtype": "Section Break"},
-  {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Active\nInactive\nClosed", "default": "Active", "reqd": 1, "in_list_view": 1}
+  {
+   "fieldname": "group_name",
+   "label": "Group Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "center",
+   "label": "Center",
+   "fieldtype": "Link",
+   "options": "MFI Center",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "formation_date",
+   "label": "Formation Date",
+   "fieldtype": "Date",
+   "default": "Today"
+  },
+  {
+   "fieldname": "field_officer",
+   "label": "Field Officer",
+   "fieldtype": "Link",
+   "options": "MFI Field Officer"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "members",
+   "label": "Members",
+   "fieldtype": "Table",
+   "options": "MFI Group Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address_section",
+   "label": "Address",
+   "fieldtype": "Section Break",
+   "collapsible": 0
+  },
+  {
+   "fieldname": "country",
+   "label": "Country",
+   "fieldtype": "Data",
+   "default": "India",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "description": "Default India — change if needed"
+  },
+  {
+   "fieldname": "state",
+   "label": "State",
+   "fieldtype": "Select",
+   "options": "Andhra Pradesh\nArunachal Pradesh\nAssam\nBihar\nChhattisgarh\nGoa\nGujarat\nHaryana\nHimachal Pradesh\nJharkhand\nKarnataka\nKerala\nMadhya Pradesh\nMaharashtra\nManipur\nMeghalaya\nMizoram\nNagaland\nOdisha\nPunjab\nRajasthan\nSikkim\nTamil Nadu\nTelangana\nTripura\nUttar Pradesh\nUttarakhand\nWest Bengal\nAndaman and Nicobar Islands\nChandigarh\nDadra and Nagar Haveli and Daman and Diu\nDelhi\nJammu and Kashmir\nLadakh\nLakshadweep\nPuducherry",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "district",
+   "label": "District",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "description": "Select from list or type manually if not found"
+  },
+  {
+   "fieldname": "column_break_addr1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "city",
+   "label": "City",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "description": "Select from district list or type manually"
+  },
+  {
+   "fieldname": "pincode",
+   "label": "Pincode",
+   "fieldtype": "Data",
+   "length": 6,
+   "description": "6-digit pincode"
+  },
+  {
+   "fieldname": "address_line1",
+   "label": "Address Line 1",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "description": "House/Street/Landmark"
+  },
+  {
+   "fieldname": "address_line2",
+   "label": "Address Line 2",
+   "fieldtype": "Data",
+   "description": "Area/Locality (optional)"
+  },
+  {
+   "fieldname": "location",
+   "label": "Geolocation",
+   "fieldtype": "Geolocation",
+   "description": "Optional map pin"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Active\nInactive\nClosed",
+   "default": "Active",
+   "reqd": 1,
+   "in_list_view": 1
+  }
  ]
 }

@@ -9,27 +9,174 @@
  "track_changes": 1,
  "autoname": "MFI-CTR-.####",
  "title_field": "center_name",
- "search_fields": "center_name, branch",
+ "search_fields": "center_name, branch, city, district, state",
  "sort_field": "creation",
  "engine": "InnoDB",
  "permissions": [
-  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
-  {"role": "MFI Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
-  {"role": "MFI Branch Manager", "read": 1, "write": 1, "create": 1, "delete": 0},
-  {"role": "MFI Loan Officer", "read": 1, "write": 1, "create": 1, "delete": 0},
-  {"role": "MFI Auditor", "read": 1, "write": 0, "create": 0, "delete": 0}
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "MFI Admin",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "MFI Branch Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0
+  },
+  {
+   "role": "MFI Loan Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0
+  },
+  {
+   "role": "MFI Auditor",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0
+  }
  ],
  "fields": [
-  {"fieldname": "center_name", "label": "Center Name", "fieldtype": "Data", "reqd": 1, "in_list_view": 1, "in_standard_filter": 1},
-  {"fieldname": "branch", "label": "Branch", "fieldtype": "Link", "options": "MFI Branch", "in_list_view": 1, "in_standard_filter": 1},
-  {"fieldname": "area", "label": "Area", "fieldtype": "Data"},
-  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
-  {"fieldname": "meeting_day", "label": "Meeting Day", "fieldtype": "Select", "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday", "reqd": 1, "in_list_view": 1},
-  {"fieldname": "meeting_time", "label": "Meeting Time", "fieldtype": "Time"},
-  {"fieldname": "field_officer", "label": "Field Officer", "fieldtype": "Link", "options": "MFI Field Officer", "in_list_view": 1},
-  {"fieldname": "section_break_1", "fieldtype": "Section Break"},
-  {"fieldname": "location", "label": "Meeting Location", "fieldtype": "Geolocation"},
-  {"fieldname": "address", "label": "Address", "fieldtype": "Small Text"},
-  {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Active\nInactive", "default": "Active", "reqd": 1, "in_list_view": 1}
+  {
+   "fieldname": "center_name",
+   "label": "Center Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "branch",
+   "label": "Branch",
+   "fieldtype": "Link",
+   "options": "MFI Branch",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "area",
+   "label": "Area",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meeting_day",
+   "label": "Meeting Day",
+   "fieldtype": "Select",
+   "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "meeting_time",
+   "label": "Meeting Time",
+   "fieldtype": "Time"
+  },
+  {
+   "fieldname": "field_officer",
+   "label": "Field Officer",
+   "fieldtype": "Link",
+   "options": "MFI Field Officer",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address_section",
+   "label": "Address",
+   "fieldtype": "Section Break",
+   "collapsible": 0
+  },
+  {
+   "fieldname": "country",
+   "label": "Country",
+   "fieldtype": "Data",
+   "default": "India",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "description": "Default India — change if needed"
+  },
+  {
+   "fieldname": "state",
+   "label": "State",
+   "fieldtype": "Select",
+   "options": "Andhra Pradesh\nArunachal Pradesh\nAssam\nBihar\nChhattisgarh\nGoa\nGujarat\nHaryana\nHimachal Pradesh\nJharkhand\nKarnataka\nKerala\nMadhya Pradesh\nMaharashtra\nManipur\nMeghalaya\nMizoram\nNagaland\nOdisha\nPunjab\nRajasthan\nSikkim\nTamil Nadu\nTelangana\nTripura\nUttar Pradesh\nUttarakhand\nWest Bengal\nAndaman and Nicobar Islands\nChandigarh\nDadra and Nagar Haveli and Daman and Diu\nDelhi\nJammu and Kashmir\nLadakh\nLakshadweep\nPuducherry",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "district",
+   "label": "District",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "description": "Select from list or type manually if not found"
+  },
+  {
+   "fieldname": "column_break_addr1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "city",
+   "label": "City",
+   "fieldtype": "Autocomplete",
+   "in_list_view": 1,
+   "description": "Select from district list or type manually"
+  },
+  {
+   "fieldname": "pincode",
+   "label": "Pincode",
+   "fieldtype": "Data",
+   "length": 6,
+   "description": "6-digit pincode"
+  },
+  {
+   "fieldname": "address_line1",
+   "label": "Address Line 1",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "description": "House/Street/Landmark"
+  },
+  {
+   "fieldname": "address_line2",
+   "label": "Address Line 2",
+   "fieldtype": "Data",
+   "description": "Area/Locality (optional)"
+  },
+  {
+   "fieldname": "location",
+   "label": "Geolocation",
+   "fieldtype": "Geolocation",
+   "description": "Optional map pin"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Active\nInactive",
+   "default": "Active",
+   "reqd": 1,
+   "in_list_view": 1
+  }
  ]
 }
