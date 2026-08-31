@@ -1,0 +1,32 @@
+{
+  "version": "v1",
+  "source_repo": "yashveeeeeeer/india-geodata",
+  "source_tag": "healthcare/facilities",
+  "coverage": "healthcare facilities NIC \u2014 point locations national (147957: SCE 124889, PHC 19454, CHC 3180, THO/DHO)",
+  "built_at": "2026-08-31T09:26:40.017865Z",
+  "crs": "EPSG:4326",
+  "license": "India-OGL (NIC HealthGIS / NHM)",
+  "quantize_decimals": 5,
+  "files": [
+    {
+      "path": "points.min.geojson.gz",
+      "use": "healthcare-points",
+      "features": 147957,
+      "size_gz": 4469845,
+      "size_br": 3245829,
+      "sha256": "8eb369e840bce9e647c5ae01523dee8059968929129ff34952fb92fcb11d757b",
+      "sha256_br": "85af5b3d585295ccd0739724668066b21ad6411d48d8a0f9ff9d050de206ae86",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip"
+    },
+    {
+      "path": "points.min.geojson.br",
+      "use": "healthcare-points-brotli",
+      "features": 147957,
+      "size_br": 3245829,
+      "sha256_br": "85af5b3d585295ccd0739724668066b21ad6411d48d8a0f9ff9d050de206ae86",
+      "content_type": "application/geo+json",
+      "content_encoding": "br"
+    }
+  ]
+}
