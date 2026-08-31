@@ -1,0 +1,386 @@
+{
+  "version": "v1",
+  "source_repo": "yashveeeeeeer/india-geodata",
+  "source_tag": [
+    "infra/national-highways",
+    "infra/railways",
+    "infra/inland-waterways"
+  ],
+  "coverage": "infrastructure pilot \u2014 national highways (toll plazas, MMLP), railways (stations, bridges, metros), inland waterways (all small layers)",
+  "built_at": "2026-08-31T09:42:43.861046Z",
+  "crs": "EPSG:4326",
+  "license": "CC0-1.0 / GODL / ODbL per layer (see source README)",
+  "quantize_decimals": 5,
+  "simplify_tol": 0.0001,
+  "note": "Large layers (NIC/NUIS/PMGSY/ML/SOI roads >100MB) deferred to next phase \u2014 pilot covers high-value small layers for MFI mobility",
+  "files": [
+    {
+      "path": "national-highways/toll-plazas.min.geojson.gz",
+      "use": "national-highways-toll-plazas",
+      "features": 678,
+      "size_gz": 25959,
+      "size_br": 20241,
+      "sha256": "a797df95f82ec83dbe23bb53253bf9019515ea6cf63bf14ca39e05663ae5678b",
+      "sha256_br": "e73ab6938de0c0e1d08f0f9ee07c1f36dee97d1b81fe5170f3f8e87a4fac38bc",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "national-highways/GatiShakti_MORTH_Toll_Plazas.parquet",
+      "props": [
+        "plaza_name",
+        "nhno_new",
+        "nooflanes",
+        "tollplazac",
+        "tollplazal",
+        "district",
+        "stateid",
+        "tpdid"
+      ]
+    },
+    {
+      "path": "national-highways/toll-plazas.min.geojson.br",
+      "use": "national-highways-toll-plazas-brotli",
+      "features": 678,
+      "size_br": 20241,
+      "sha256_br": "e73ab6938de0c0e1d08f0f9ee07c1f36dee97d1b81fe5170f3f8e87a4fac38bc",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "national-highways/GatiShakti_MORTH_Toll_Plazas.parquet",
+      "props": [
+        "plaza_name",
+        "nhno_new",
+        "nooflanes",
+        "tollplazac",
+        "tollplazal",
+        "district",
+        "stateid",
+        "tpdid"
+      ]
+    },
+    {
+      "path": "national-highways/mmlp-lines.min.geojson.gz",
+      "use": "national-highways-mmlp-lines",
+      "features": 302,
+      "size_gz": 4838,
+      "size_br": 3457,
+      "sha256": "df0033961543fe205ac9a3dd1ca700a706a5a33f71b54c0b81c85a2d768e49ba",
+      "sha256_br": "28c8df0c582688d0e22cb73f42c4f9eee3135f9812181e48e2efe99cd734001c",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "national-highways/GatiShakti_MORTH_MMLP_lines.parquet",
+      "props": [
+        "name",
+        "folders"
+      ]
+    },
+    {
+      "path": "national-highways/mmlp-lines.min.geojson.br",
+      "use": "national-highways-mmlp-lines-brotli",
+      "features": 302,
+      "size_br": 3457,
+      "sha256_br": "28c8df0c582688d0e22cb73f42c4f9eee3135f9812181e48e2efe99cd734001c",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "national-highways/GatiShakti_MORTH_MMLP_lines.parquet"
+    },
+    {
+      "path": "national-highways/mmlp-polygons.min.geojson.gz",
+      "use": "national-highways-mmlp-polygons",
+      "features": 774,
+      "size_gz": 20853,
+      "size_br": 14012,
+      "sha256": "9d04ebaeb1fbd12c55ecbee3949ad1779e7d8c665e36ae37f289cb31253e6646",
+      "sha256_br": "db0f08055de8c74c44fa6363396011b47db48796628d552e94f127eada0a32d0",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "national-highways/GatiShakti_MORTH_MMLP_polygons.parquet",
+      "props": [
+        "name",
+        "folders"
+      ]
+    },
+    {
+      "path": "national-highways/mmlp-polygons.min.geojson.br",
+      "use": "national-highways-mmlp-polygons-brotli",
+      "features": 774,
+      "size_br": 14012,
+      "sha256_br": "db0f08055de8c74c44fa6363396011b47db48796628d552e94f127eada0a32d0",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "national-highways/GatiShakti_MORTH_MMLP_polygons.parquet"
+    },
+    {
+      "path": "railways/stations.min.geojson.gz",
+      "use": "railways-stations",
+      "features": 13134,
+      "size_gz": 122532,
+      "size_br": 82314,
+      "sha256": "9f0078cc69ab150d59d325251ee0136722312c49729514e00f19a4c7536eb0d6",
+      "sha256_br": "64f12d6379c3cd480c9a38e90789d9d58c3ae94059c78629903eb27a5baedf43",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "railways/GatiShakti_Railway_stations.parquet",
+      "props": [
+        "district",
+        "state"
+      ]
+    },
+    {
+      "path": "railways/stations.min.geojson.br",
+      "use": "railways-stations-brotli",
+      "features": 13134,
+      "size_br": 82314,
+      "sha256_br": "64f12d6379c3cd480c9a38e90789d9d58c3ae94059c78629903eb27a5baedf43",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "railways/GatiShakti_Railway_stations.parquet"
+    },
+    {
+      "path": "railways/bridges.min.geojson.gz",
+      "use": "railways-bridges",
+      "features": 22383,
+      "size_gz": 392882,
+      "size_br": 274902,
+      "sha256": "85d39e5d21a275137377b494f870b91e7a74dbce44675050ff4051acba5ba71b",
+      "sha256_br": "73afa2370305b6da65ce302864d82bd2effbc21a17f53a951adc170045e09074",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "railways/Bhuvan_Railway_bridges.parquet",
+      "props": [
+        "RIVNAME",
+        "ORDSH",
+        "RASTERVALU",
+        "FID_River_"
+      ]
+    },
+    {
+      "path": "railways/bridges.min.geojson.br",
+      "use": "railways-bridges-brotli",
+      "features": 22383,
+      "size_br": 274902,
+      "sha256_br": "73afa2370305b6da65ce302864d82bd2effbc21a17f53a951adc170045e09074",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "railways/Bhuvan_Railway_bridges.parquet",
+      "props": [
+        "RIVNAME",
+        "ORDSH",
+        "RASTERVALU",
+        "FID_River_"
+      ]
+    },
+    {
+      "path": "railways/metros.min.geojson.gz",
+      "use": "railways-metros",
+      "features": 19,
+      "size_gz": 1146,
+      "size_br": 854,
+      "sha256": "f9ccb51356487adf89d47a0e0c397e692e6ff32c0567d8c50d2a2fcaad13df46",
+      "sha256_br": "d755140c02260468bad951758b8b67a739d6fe91143ee953d82b93e9b6032d41",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "railways/SOI_Metros.parquet",
+      "props": [
+        "name"
+      ]
+    },
+    {
+      "path": "railways/metros.min.geojson.br",
+      "use": "railways-metros-brotli",
+      "features": 19,
+      "size_br": 854,
+      "sha256_br": "d755140c02260468bad951758b8b67a739d6fe91143ee953d82b93e9b6032d41",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "railways/SOI_Metros.parquet"
+    },
+    {
+      "path": "waterways/waterways.min.geojson.gz",
+      "use": "waterways-waterways",
+      "features": 22,
+      "size_gz": 26197,
+      "size_br": 15630,
+      "sha256": "0b8cd8adaef9be5156ef0d68c2daacd367d2cdd45f903f12e519615f77909bcf",
+      "sha256_br": "acca78e7191dd93068552e35e93455e648ddb1255e3128d86add96312f0375c4",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "waterways/WRIS_Waterways.parquet",
+      "props": [
+        "wway",
+        "descript",
+        "objectid"
+      ]
+    },
+    {
+      "path": "waterways/waterways.min.geojson.br",
+      "use": "waterways-waterways-brotli",
+      "features": 22,
+      "size_br": 15630,
+      "sha256_br": "acca78e7191dd93068552e35e93455e648ddb1255e3128d86add96312f0375c4",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "waterways/WRIS_Waterways.parquet"
+    },
+    {
+      "path": "waterways/waterways-with-depth.min.geojson.gz",
+      "use": "waterways-waterways-with-depth",
+      "features": 1645,
+      "size_gz": 71612,
+      "size_br": 48719,
+      "sha256": "b7889cb24664d8abc2fe326cde507fdc2ca62558ceb9b01bc7c253f58e298d0a",
+      "sha256_br": "b08fa51a28dbf0a7b5c328c3f259aa962ecfe24c414cbeb2e61e16ca0a05cae7",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "waterways/WRIS_Waterways_with_depth.parquet",
+      "props": [
+        "wwcode",
+        "least_available_depth"
+      ]
+    },
+    {
+      "path": "waterways/waterways-with-depth.min.geojson.br",
+      "use": "waterways-waterways-with-depth-brotli",
+      "features": 1645,
+      "size_br": 48719,
+      "sha256_br": "b08fa51a28dbf0a7b5c328c3f259aa962ecfe24c414cbeb2e61e16ca0a05cae7",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "waterways/WRIS_Waterways_with_depth.parquet"
+    },
+    {
+      "path": "waterways/navigation-canals.min.geojson.gz",
+      "use": "waterways-navigation-canals",
+      "features": 20,
+      "size_gz": 11525,
+      "size_br": 6869,
+      "sha256": "1179505acaf0acadcb1ad6ef43704d7651574d39e710c6539b95bc762a8d9d33",
+      "sha256_br": "7cc537c6c3c7de269a709af147fd8a1a7c210a273e461d3349efb19186222708",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "waterways/WRIS_Navigation_Canals.parquet",
+      "props": [
+        "canal",
+        "nway",
+        "descriptio"
+      ]
+    },
+    {
+      "path": "waterways/navigation-canals.min.geojson.br",
+      "use": "waterways-navigation-canals-brotli",
+      "features": 20,
+      "size_br": 6869,
+      "sha256_br": "7cc537c6c3c7de269a709af147fd8a1a7c210a273e461d3349efb19186222708",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "waterways/WRIS_Navigation_Canals.parquet"
+    },
+    {
+      "path": "waterways/ferries.min.geojson.gz",
+      "use": "waterways-ferries",
+      "features": 9517,
+      "size_gz": 246399,
+      "size_br": 173101,
+      "sha256": "0c2d47d3ecf7e35dfb4068d35b48962248b68856ce680633f66f4a19740bfb48",
+      "sha256_br": "edbdbec63006f3a1352b52719a1f0ef119e1c12dbb2ae264b50b7641f778a202",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "waterways/SOI_Ferries.parquet",
+      "props": [
+        "loc_name",
+        "addl_info",
+        "unique_id"
+      ]
+    },
+    {
+      "path": "waterways/ferries.min.geojson.br",
+      "use": "waterways-ferries-brotli",
+      "features": 9517,
+      "size_br": 173101,
+      "sha256_br": "edbdbec63006f3a1352b52719a1f0ef119e1c12dbb2ae264b50b7641f778a202",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "waterways/SOI_Ferries.parquet"
+    },
+    {
+      "path": "waterways/navigation-locks.min.geojson.gz",
+      "use": "waterways-navigation-locks",
+      "features": 118,
+      "size_gz": 2834,
+      "size_br": 1987,
+      "sha256": "3d50d260545c3ad25ed79c7e681e39a40aac4163251c0da20e2aa83cb7cd75b6",
+      "sha256_br": "9ad5f58fa56a49b7fc032c1a6a2b7227a1a8233b1e2764e8069e5447e9f65cc5",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "waterways/SOI_Navigation_Locks.parquet",
+      "props": [
+        "loc_name",
+        "orig_fid",
+        "unique_id"
+      ]
+    },
+    {
+      "path": "waterways/navigation-locks.min.geojson.br",
+      "use": "waterways-navigation-locks-brotli",
+      "features": 118,
+      "size_br": 1987,
+      "sha256_br": "9ad5f58fa56a49b7fc032c1a6a2b7227a1a8233b1e2764e8069e5447e9f65cc5",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "waterways/SOI_Navigation_Locks.parquet"
+    },
+    {
+      "path": "waterways/facilities.min.geojson.gz",
+      "use": "waterways-facilities",
+      "features": 374,
+      "size_gz": 6881,
+      "size_br": 5322,
+      "sha256": "568c2ca9c8ca6bd64ecf75cfc8965cd6ddfe02fa04af21ddb9ebaee48683ca66",
+      "sha256_br": "8cf1948b9ae9f987217d8b348be6addc6dc811de173fa0b4fb085d9757a0bada",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "waterways/WRIS_Waterway_facilities.parquet",
+      "props": [
+        "name",
+        "waterway",
+        "type",
+        "wways"
+      ]
+    },
+    {
+      "path": "waterways/facilities.min.geojson.br",
+      "use": "waterways-facilities-brotli",
+      "features": 374,
+      "size_br": 5322,
+      "sha256_br": "8cf1948b9ae9f987217d8b348be6addc6dc811de173fa0b4fb085d9757a0bada",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "waterways/WRIS_Waterway_facilities.parquet"
+    },
+    {
+      "path": "waterways/soi-facilities.min.geojson.gz",
+      "use": "waterways-soi-facilities",
+      "features": 265,
+      "size_gz": 3269,
+      "size_br": 2467,
+      "sha256": "cfb7a63f78a866b9db3616232d0d0df41c5f334928fe9073d97d5b9e896f0359",
+      "sha256_br": "49517f25fd5044976ba248306b23680326f2748aedf6c348df15c84fd8b44b9c",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip",
+      "source": "waterways/SOI_Waterway_facilities.parquet",
+      "props": [
+        "port_name",
+        "buoy_type",
+        "layer"
+      ]
+    },
+    {
+      "path": "waterways/soi-facilities.min.geojson.br",
+      "use": "waterways-soi-facilities-brotli",
+      "features": 265,
+      "size_br": 2467,
+      "sha256_br": "49517f25fd5044976ba248306b23680326f2748aedf6c348df15c84fd8b44b9c",
+      "content_type": "application/geo+json",
+      "content_encoding": "br",
+      "source": "waterways/SOI_Waterway_facilities.parquet"
+    }
+  ]
+}

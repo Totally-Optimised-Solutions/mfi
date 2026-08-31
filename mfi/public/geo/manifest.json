@@ -711,6 +711,7 @@
     "police/manifest.json",
     "education/manifest.json",
     "healthcare/manifest.json",
-    "electoral/manifest.json"
+    "electoral/manifest.json",
+    "infrastructure/manifest.json"
   ]
 }
