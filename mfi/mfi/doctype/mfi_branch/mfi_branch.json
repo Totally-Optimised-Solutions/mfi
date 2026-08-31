@@ -51,6 +51,11 @@
  ],
  "fields": [
   {
+   "fieldname": "tab_details",
+   "label": "Details",
+   "fieldtype": "Tab Break"
+  },
+  {
    "fieldname": "branch_name",
    "label": "Branch Name",
    "fieldtype": "Data",
@@ -102,6 +107,20 @@
   {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Active\nInactive\nClosed",
+   "default": "Active",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "tab_address",
+   "label": "Address",
+   "fieldtype": "Tab Break"
   },
   {
    "fieldname": "address_section",
@@ -169,6 +188,11 @@
    "description": "Area/Locality (optional)"
   },
   {
+   "fieldname": "tab_location",
+   "label": "Location",
+   "fieldtype": "Tab Break"
+  },
+  {
    "fieldname": "geo_section",
    "label": "Geo — Base Pin & Service Area",
    "fieldtype": "Section Break",
@@ -205,15 +229,6 @@
    "label": "Service Area (Pencil Polygon)",
    "fieldtype": "Geolocation",
    "description": "Pencil tool से पूरे area को polygon बनाओ — सारे points connect करके exact boundary draw करो (edit/delete pencil toolbar से)"
-  },
-  {
-   "fieldname": "status",
-   "label": "Status",
-   "fieldtype": "Select",
-   "options": "Active\nInactive\nClosed",
-   "default": "Active",
-   "reqd": 1,
-   "in_list_view": 1
   }
  ]
 }
