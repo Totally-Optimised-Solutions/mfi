@@ -712,6 +712,7 @@
     "education/manifest.json",
     "healthcare/manifest.json",
     "electoral/manifest.json",
-    "infrastructure/manifest.json"
+    "infrastructure/manifest.json",
+    "transport/manifest.json"
   ]
 }

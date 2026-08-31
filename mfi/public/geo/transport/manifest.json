@@ -1,0 +1,55 @@
+{
+  "version": "v1",
+  "source_repo": "yashveeeeeeer/india-geodata",
+  "source_tag": null,
+  "coverage": "transport airports \u2014 points 2710 + polygons 6126 (HOT OSM, AAI)",
+  "built_at": "2026-08-31T09:47:22.171360Z",
+  "crs": "EPSG:4326",
+  "license": "ODbL (OSM) / AAI",
+  "quantize_decimals": 5,
+  "simplify_tol": {
+    "polygons": 0.0001
+  },
+  "files": [
+    {
+      "path": "airports-points.min.geojson.gz",
+      "use": "transport-airports-points",
+      "features": 2710,
+      "size_gz": 25359,
+      "size_br": 18556,
+      "sha256": "3ae030bc973319219c176f4d07fcd0cd7f0d371a8dba9c7f620daec0b77b6c54",
+      "sha256_br": "ca1d85a5d7187424fecd5c28600624d97325f0ec1d728abbdd18c8b24cd0b911",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip"
+    },
+    {
+      "path": "airports-points.min.geojson.br",
+      "use": "transport-airports-points-brotli",
+      "features": 2710,
+      "size_br": 18556,
+      "sha256_br": "ca1d85a5d7187424fecd5c28600624d97325f0ec1d728abbdd18c8b24cd0b911",
+      "content_type": "application/geo+json",
+      "content_encoding": "br"
+    },
+    {
+      "path": "airports-polygons.min.geojson.gz",
+      "use": "transport-airports-polygons",
+      "features": 6126,
+      "size_gz": 286849,
+      "size_br": 188206,
+      "sha256": "a913c62f5c5a0f39f44af39bb56735cab96221d998631ff260e40e3e96bc884d",
+      "sha256_br": "1b44b55e593b1a37092b22a90bd5c23fc8aab48dce54c06eea9665944f563930",
+      "content_type": "application/geo+json",
+      "content_encoding": "gzip"
+    },
+    {
+      "path": "airports-polygons.min.geojson.br",
+      "use": "transport-airports-polygons-brotli",
+      "features": 6126,
+      "size_br": 188206,
+      "sha256_br": "1b44b55e593b1a37092b22a90bd5c23fc8aab48dce54c06eea9665944f563930",
+      "content_type": "application/geo+json",
+      "content_encoding": "br"
+    }
+  ]
+}
