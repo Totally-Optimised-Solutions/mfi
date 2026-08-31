@@ -56,6 +56,15 @@
    "fieldtype": "Tab Break"
   },
   {
+   "fieldname": "branch_code",
+   "label": "Branch Code",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "description": "e.g. BR-MH-PUNE-001 — unique code, पहले यही भरें"
+  },
+  {
    "fieldname": "branch_name",
    "label": "Branch Name",
    "fieldtype": "Data",
@@ -65,28 +74,21 @@
    "in_standard_filter": 1
   },
   {
-   "fieldname": "branch_code",
-   "label": "Branch Code",
-   "fieldtype": "Data",
-   "reqd": 1,
-   "unique": 1,
-   "in_list_view": 1,
-   "description": "e.g. BR-001"
-  },
-  {
    "fieldname": "column_break_1",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "region",
    "label": "Region",
-   "fieldtype": "Data",
-   "in_list_view": 1
+   "fieldtype": "Select",
+   "options": "\nNorth\nSouth\nEast\nWest\nCentral\nNorth-East",
+   "description": "Broad belt — कई states मिलके एक Region (reporting/cluster के लिए)"
   },
   {
    "fieldname": "zone",
    "label": "Zone",
-   "fieldtype": "Data"
+   "fieldtype": "Data",
+   "description": "Region के अंदर operational zone — e.g. Maharashtra Zone, Bihar-UP Zone (4–6 branches per zone)"
   },
   {
    "fieldname": "section_break_1",
