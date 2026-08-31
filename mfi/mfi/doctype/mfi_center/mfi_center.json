@@ -108,12 +108,14 @@
   {
    "fieldname": "country",
    "label": "Country",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "default": "India",
    "reqd": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "description": "Default India — change if needed"
+   "description": "Fixed to India",
+   "options": "India",
+   "read_only": 1
   },
   {
    "fieldname": "state",
