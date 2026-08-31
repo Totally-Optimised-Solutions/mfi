@@ -1,7 +1,4 @@
-// MFI titles — show "MFI / Branch / New" not "Branch / New Branch".
-// Branch/Center/Group etc live under MFI module. Breadcrumb should be
-// MFI -> Branch -> New (generic), not "New Branch" duplicated.
-// List title -> "Branch" stays.
+// MFI titles — MFI / Branch / New, list Add -> Add, titles without MFI prefix.
 (function () {
 	var MAP = {
 		"MFI Branch": "Branch",
@@ -21,23 +18,16 @@
 	Object.keys(MAP).forEach(function (dt) {
 		var label = MAP[dt];
 
-		// Form: frappe.breadcrumbs.add(module, doctype) uses doctype string.
-		// We intercept breadcrumb add to map "MFI Branch" -> "Branch",
-		// then set page title to just "New" for new docs (breadcrumb already shows Branch).
 		frappe.ui.form.on(dt, {
 			refresh: function (frm) {
 				if (!frm.is_new()) return;
 				setTimeout(function () {
-					// Fix title: was "New Branch" -> make it just "New"
-					// with breadcrumb MFI / Branch / New
 					if (frm.page && frm.page.set_title) {
 						frm.page.set_title(__("New"));
 					}
-					// Fallback DOM — avoid double "New Branch" if another hook already set it
 					var h = document.querySelector(".page-title .title-text");
 					if (h) {
 						var t = h.textContent.trim();
-						// "New Branch" or "New MFI Branch" -> "New"
 						if (t === "New " + label || t.indexOf("New MFI") === 0) {
 							h.textContent = "New";
 						}
@@ -46,7 +36,6 @@
 			},
 		});
 
-		// List: "MFI Branch" -> "Branch"
 		frappe.listview_settings[dt] = frappe.listview_settings[dt] || {};
 		var orig = frappe.listview_settings[dt].onload;
 		frappe.listview_settings[dt].onload = function (listview) {
@@ -54,22 +43,54 @@
 			if (listview.page && listview.page.set_title) {
 				listview.page.set_title(__(label));
 			}
+			// "Add Branch" -> "Add" — primary action button
+			setTimeout(function () {
+				var btn = listview.page && listview.page.btn_primary;
+				if (!btn) btn = document.querySelector(".page-actions .btn-primary, .primary-action");
+				if (!btn) return;
+				var $btn = $(btn);
+				// frappe sets "Add {0}" — replace with just "Add"
+				var txt = $btn.text().trim();
+				if (txt.indexOf("Add ") === 0) {
+					// keep icon, replace label
+					$btn.contents().filter(function () { return this.nodeType === 3; }).each(function () {
+						this.textContent = this.textContent.replace(/Add\s+.*/, "Add");
+					});
+					if ($btn.text().trim() !== "Add") $btn.text("Add");
+				}
+			}, 80);
 		};
 	});
 
-	// Breadcrumb cleaner: patch frappe.breadcrumbs.add to strip "MFI " from doctype
+	// Generic fallback: any list view primary button "Add X" -> "Add" for MFI routes
+	function cleanAddButton() {
+		var path = frappe.get_route_str ? frappe.get_route_str() : "";
+			if (path.indexOf("MFI") === -1 && !Object.keys(MAP).some(function (k) { return path.indexOf(encodeURIComponent(k)) !== -1; })) { return; }
+		document.querySelectorAll(".page-actions .btn-primary, .primary-action, .btn-primary[data-label]").forEach(function (btn) {
+			var t = btn.textContent.trim();
+			if (t.indexOf("Add ") === 0) {
+				// preserve icon spans, only replace text node
+				btn.childNodes.forEach(function (n) {
+					if (n.nodeType === 3 && n.textContent.trim().indexOf("Add ") === 0) {
+						n.textContent = " Add ";
+					}
+				});
+				if (btn.textContent.trim().indexOf("Add ") === 0) {
+					btn.textContent = "Add";
+				}
+			}
+		});
+	}
+
 	var _add = frappe.breadcrumbs && frappe.breadcrumbs.add;
 	if (_add) {
 		frappe.breadcrumbs.add = function (module, doctype) {
 			if (doctype && MAP[doctype]) doctype = MAP[doctype];
-			// frappe.breadcrumbs.add can be called with (module, doctype) or (label)
 			if (module && MAP[module]) module = MAP[module];
-			// Normalize: module "MFI" stays, doctype "MFI Branch" -> "Branch"
 			return _add.call(this, module, doctype);
 		};
 	}
 
-	// Also clean any already-rendered breadcrumb "MFI Branch" -> "Branch"
 	if (frappe.router && frappe.router.on) {
 		frappe.router.on("change", function () {
 			setTimeout(function () {
@@ -80,7 +101,20 @@
 						if (t === "New " + k) el.textContent = "New";
 					});
 				});
+				cleanAddButton();
 			}, 150);
 		});
+	}
+
+	// Patch __("Add {0}") for MFI doctypes to return just "Add"
+	var _orig__ = window.__;
+	if (_orig__) {
+		window.__ = function (txt, replace, context) {
+			if (txt === "Add {0}" && replace && replace[0] && MAP[replace[0]]) {
+				return "Add";
+			}
+			return _orig__(txt, replace, context);
+		};
+		window.__._orig = _orig__;
 	}
 })();
