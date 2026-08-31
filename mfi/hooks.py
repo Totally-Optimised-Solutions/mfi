@@ -12,11 +12,19 @@ fixtures = [
 	},
 ]
 
-scheduler_events = {
-	"daily": ["mfi.tasks.process_npa_classification"],
-	"cron": {
-		"0 6 * * *": ["mfi.tasks.send_due_reminders"],
-	},
-}
+app_logo_url = "/assets/mfi/images/mfi-logo.svg"
+app_icon = "octicon octicon-organization"
+app_color = "blue"
+app_home = "/app/mfi"
+
+add_to_apps_screen = [
+	{
+		"name": app_name,
+		"logo": app_logo_url,
+		"title": app_title,
+		"route": app_home,
+		"has_permission": "frappe.permissions.check_app_permission",
+	}
+]
 
 after_migrate = ["mfi.patches.v0_1.create_mfi_roles.execute"]
